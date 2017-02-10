@@ -6,8 +6,8 @@ Requirements :
 - install [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
 Usage : 
-'''
+```bash
 packer build packer.json
-'''
+```
 
 This creates a directory output-virtualbox-iso. From virtualbox you can then import the appliance created in that directory
