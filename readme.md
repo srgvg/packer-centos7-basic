@@ -6,7 +6,7 @@ Requirements :
 - install [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 
 Usage : 
-'''bash
+'''
 packer build packer.json
 '''
 
