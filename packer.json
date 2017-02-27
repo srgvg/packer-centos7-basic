@@ -30,17 +30,18 @@
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
       ],
-      "shutdown_command": "echo 'changeme' | sudo -S /sbin/halt -h -p"
+      "shutdown_command": "sudo -S /sbin/halt -h -p"
     }
   ],
   "provisioners": [
     {
       "type": "shell",
       "scripts": [
-	"yumpackages.sh",
-        "cleanup.sh"
+        "yumpackages.sh",
+        "cleanup.sh",
+        "ssh-keys.sh"
       ],
-      "execute_command": "echo 'changeme' | {{.Vars}} sudo -S -E bash '{{.Path}}'"
+      "execute_command": "{{.Vars}} sudo -S -E bash '{{.Path}}'"
     }
   ]
 }
