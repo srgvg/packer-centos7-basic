@@ -2,30 +2,15 @@
   "builders": [
     {
       "vm_name": "centos7",
-      "guest_os_type": "RedHat_64",
       "iso_checksum_type": "sha256",
       "iso_checksum": "f2f7367deb90a25822947660c71638333ca0eceeabecc2d631be6cd508c24494",
       "iso_url": "http://ftp.hosteurope.de/mirror/centos.org/7/isos/x86_64/CentOS-7-x86_64-NetInstall-1611.iso",
-      "type": "virtualbox-iso",
+      "type": "qemu",
       "ssh_password": "changeme",
       "ssh_username": "admin",
       "ssh_wait_timeout": "50000s",
       "disk_size": "8000",
       "headless": "true",
-      "vboxmanage": [
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--memory",
-          "1024"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--cpus",
-          "1"
-        ]
-      ],
       "http_directory": ".",
       "boot_command": [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter>"
